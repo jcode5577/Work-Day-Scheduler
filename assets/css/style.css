@@ -1,10 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Homemade+Apple&display=swap');
+
 
 body {
   font-family: 'Open Sans', sans-serif;
-  font-size: 16px;
-  background: url('./images/leaves.jpg'); 
+  font-size: 20px;
+  background: url('../images/cool-background.jpg'); 
+  background-repeat:no-repeat;
 
+  
 }
 
 textarea {
