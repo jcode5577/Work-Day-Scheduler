@@ -1,50 +1,138 @@
-//displays current date and time
-$("#currentDay").text(moment().format("MMMM Do YYYY, h:mm:ss a"));
+var displayTime = document.querySelector("#currentDay");
 
-// uses a for loop to prevent using repeating code for localStorage
-for (let i = 9; i < 18; i++) {
-  var timeBlockEl = $("#hour" + i);
-  var buttonEl = timeBlockEl.children("button");
-  console.log(buttonEl);
+var currentTime = moment();
 
-  buttonEl.on("click", function () {
-    var textArea = $("#text" + i);
-    console.log(textArea.val());
-    var text = textArea.val();
-    localStorage.setItem("data-" + i, text);
-  });
+displayTime.textContent = currentTime.format("dddd, MMMM Do")
 
-  // for loading local storage
-  var textArea = $("#text" + i);
-  var text = localStorage.getItem("data-" + i);
-  console.log(text);
-  textArea.val(text);
+$(".saveBtn").on("click", function() {
+    // get row text field class and row id values
+    var value = $(this).siblings(".description").val();
+    var time = $(this).parent().attr("id");
+
+    // save in localStorage
+    localStorage.setItem(time /* aka KEY = row id */, value /* text in the textarea */);
+});
+
+// load any saved data from localStorage 
+
+// 9am
+$("#9am-row .description").val(localStorage.getItem("9am-row" /* localStorage KEY also the row id */));
+
+// 10am
+$("#10am-row .description").val(localStorage.getItem("#10am-row" /* localStorage KEY also the row id */));
+
+// 11am
+$("#11am-row .description").val(localStorage.getItem("11am-row" /* localStorage KEY also the row id */));
+
+// 12pm
+$("#12pm-row .description").val(localStorage.getItem("12pm-row" /* localStorage KEY also the row id */));
+
+// 1pm
+$("#1pm-row .description").val(localStorage.getItem("1pm-row" /* localStorage KEY also the row id */));
+
+// 2pm
+$("#2pm-row .description").val(localStorage.getItem("2pm-row" /* localStorage KEY also the row id */));
+
+// 3pm
+$("#3pm-row .description").val(localStorage.getItem("3pm-row" /* localStorage KEY also the row id */));
+
+// 4pm
+$("#4pm-row .description").val(localStorage.getItem("4pm-row" /* localStorage KEY also the row id */));
+
+// 5pm
+$("#5pm-row .description").val(localStorage.getItem("5pm-row" /* localStorage KEY also the row id */));
+
+// converting time and display
+
+var hour9 = 9;
+var hour10 = 10;
+var hour11 = 11;
+var hour12 = 12;
+var hour1 = 13;
+var hour2 = 14;
+var hour3 = 15;
+var hour4 = 16;
+var hour5 = 17;
+
+var currentHour = moment().format('H');
+
+// 9am 
+if (currentHour < hour9) {
+    $("#9am-text").addClass("future");
+} else if (currentHour > hour9) {
+    $("#9am-text").addClass("past");
+} else if (currentHour = hour9) {
+    $("#9am-text").addClass("present");
 }
 
-function hourUpdater() {
-  // get current number of hours
-  var currentHour = moment().hours();
-
-  // loop over time blocks
-  $(".time-block").each(function () {
-    var blockHour = parseInt($(this).attr("id").split("-")[1]);
-
-    // check if we've moved past this time
-    if (blockHour < currentHour) {
-      $(this).addClass("past");
-    } else if (blockHour === currentHour) {
-      $(this).removeClass("past");
-      $(this).removeClass("future");
-      $(this).addClass("present");
-    } else {
-      $(this).removeClass("past");
-      $(this).removeClass("present");
-      $(this).addClass("future");
-    }
-  });
+// 10am 
+if (currentHour < hour10) {
+    $("#10am-text").addClass("future");
+} else if (currentHour > hour10) {
+    $("#10am-text").addClass("past");
+} else if (currentHour = hour10) {
+    $("#10am-text").addClass("present");
 }
 
-hourUpdater();
+// 11am
+if (currentHour < hour11) {
+    $("#11am-text").addClass("future");
+} else if (currentHour > hour11) {
+    $("#11am-text").addClass("past");
+} else if (currentHour = hour11) {
+    $("#11am-text").addClass("present");
+}
 
-// set up interval to check if current time needs to be updated
-var interval = setInterval(hourUpdater, 15000);
+// 12pm
+if (currentHour < hour12) {
+    $("#12pm-text").addClass("future");
+} else if (currentHour > hour12) {
+    $("#12pm-text").addClass("past");
+} else if (currentHour = hour12) {
+    $("#12pm-text").addClass("present");
+}
+
+// 1pm
+if (currentHour < hour1) {
+    $("#1pm-text").addClass("future");
+} else if (currentHour > hour1) {
+    $("#1pm-text").addClass("past");
+} else if (currentHour = hour1) {
+    $("#1pm-text").addClass("present");
+}
+
+// 2pm
+if (currentHour < hour2) {
+    $("#2pm-text").addClass("future");
+} else if (currentHour > hour2) {
+    $("#2pm-text").addClass("past");
+} else if (currentHour = hour2) {
+    $("#2pm-text").addClass("present");
+}
+
+// 3pm
+if (currentHour < hour3) {
+    $("#3pm-text").addClass("future");
+} else if (currentHour > hour3) {
+    $("#3pm-text").addClass("past");
+} else if (currentHour = hour3) {
+    $("#3pm-text").addClass("present");
+}
+
+// 4pm
+if (currentHour < hour4) {
+    $("#4pm-text").addClass("future");
+} else if (currentHour > hour4) {
+    $("#4pm-text").addClass("past");
+} else if (currentHour = hour4) {
+    $("#4pm-text").addClass("present");
+}
+
+// 5pm
+if (currentHour < hour5) {
+    $("#5pm-text").addClass("future");
+} else if (currentHour > hour5) {
+    $("#5pm-text").addClass("past");
+} else if (currentHour = hour5) {
+    $("#5pm-text").addClass("present");
+}
