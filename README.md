@@ -14,7 +14,7 @@
   ## Installation 
   There is no installation of this project.
   ## Usage 
-  This application allows users to choose a time slot to enter a task. These tasks are stored in local storage so they are still accessable even when  the browser is refreshed. The current date is displayed on the top of the application and the times are color coded to let the user know when the event is passed,current, or in the future.
+  This application allows users to choose a time slot to enter a task. These tasks are stored in local storage so they are still accessable even when  the browser is refreshed. The current date is displayed on the top of the application and the times are color coded to let the user know when the event is passed,current, or in the future.![URL to Deployed Application](https://jcode5577.github.io/Work-Day-Scheduler/)
   ## License 
   This project is license under MIT
   ## Contributing 
