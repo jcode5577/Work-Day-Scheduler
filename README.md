@@ -15,7 +15,7 @@
   N/A
   ## Usage 
   Used to Schedule everyday tasks.
-  ![Deployed Application](https://jcode5577.github.io/Work-Day-Scheduler/)
+  [Deployed Application](https://jcode5577.github.io/Work-Day-Scheduler/)
   ![image of application](/assets/images/Screenshot.png)
 
   ## License 
